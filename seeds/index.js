@@ -5,8 +5,8 @@ const cities = require('./cities')
 // const MongoDBStore = require("connect-mongo")(session);
 
 
-
-mongoose.connect('mongodb://localhost:27017/yelp-camp',{useNewUrlParser:true,useUnifiedTopology:true})
+const dbUrl = process.env.databaseUrl || 'mongodb://127.0.0.1:27017/yelp-camp';
+mongoose.connect(dbUrl,{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex: true,})
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
@@ -17,7 +17,7 @@ const sample = (array) => array[Math.floor(Math.random()*array.length)]
 
 
 const seedDB = async () => {
-    for(let i =1; i<200;i++){
+    for(let i =1; i<70;i++){
         const random1000 = Math.floor(Math.random()*1000)
         const camp = new Campground({author:"627cc2bdc1f4f4ffad19fe66",title:`${cities[random1000].city} ${cities[random1000].state}`,location:`${sample(descriptors)} ${sample(places)}`,
         description:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae voluptatibus praesentium eveniet nam ratione ex, consequuntur natus necessitatibus nobis? Eligendi adipisci minima quisquam ipsam dolore animi, ea laborum ipsa quae!",

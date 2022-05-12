@@ -11,9 +11,11 @@ var _require = require('./seedhelpers'),
 var cities = require('./cities'); // const MongoDBStore = require("connect-mongo")(session);
 
 
-mongoose.connect('mongodb://localhost:27017/yelp-camp', {
+var dbUrl = process.env.databaseUrl || 'mongodb://127.0.0.1:27017/yelp-camp';
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 });
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -34,7 +36,7 @@ var seedDB = function seedDB() {
           i = 1;
 
         case 1:
-          if (!(i < 200)) {
+          if (!(i < 70)) {
             _context.next = 9;
             break;
           }
