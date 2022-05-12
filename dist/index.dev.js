@@ -55,7 +55,7 @@ var MongoDBStore = require('connect-mongo'); // const options = {
 //   };
 
 
-var dbUrl = process.env.databaseURL || 'mongodb://localhost:27017/yelp-camp';
+var dbUrl = process.env.databaseURL || 'mongodb://0.0.0.0:27017/yelp-camp';
 ;
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
