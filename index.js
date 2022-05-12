@@ -36,11 +36,10 @@ const MongoDBStore = require('connect-mongo')
 
 
 
-const dbUrl  = process.env.databaseURL || 'mongodb://127.0.0.1:27017/yelp-camp';
-;
-
+const dbUrl  = process.env.databaseUrl || 'mongodb://127.0.0.1:27017/yelp-camp';
 mongoose.connect(dbUrl,{
     useNewUrlParser: true,
+
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false
