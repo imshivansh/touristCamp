@@ -1,8 +1,13 @@
 {
   "name": "yelpcamp",
   "version": "1.0.0",
+  "engines":{
+    "node": "17.0.0"
+    },
+  "description": "",
   "main": "index.js",
   "scripts": {
+    
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
@@ -30,12 +35,10 @@
     "mongoose": "^5.10.4",
     "multer": "^1.4.4",
     "multer-storage-cloudinary": "^4.0.0",
-    "nodemon": "^2.0.16",
     "override": "^0.0.1",
     "passport": "^0.5.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^7.0.0",
     "sanitize-html": "^2.7.0"
-  },
-  "description": ""
+  }
 }
