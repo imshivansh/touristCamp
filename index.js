@@ -196,6 +196,6 @@ app.all("*",(req,res,next)=>{
  const port = process.env.PORT || 3000;
 
  
-app.listen(3000,function(){
+app.listen(port,function(){
     console.log(`Listening on Port ${port}`)
 })
