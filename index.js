@@ -36,7 +36,7 @@ const MongoDBStore = require('connect-mongo')
 
 
 
-const dbUrl  = process.env.databaseURL || 'mongodb://0.0.0.0:27017/yelp-camp';
+const dbUrl  = process.env.databaseURL || 'mongodb://0.0.0.1:27017/yelp-camp';
 ;
 
 mongoose.connect(dbUrl,{
@@ -193,7 +193,7 @@ app.all("*",(req,res,next)=>{
      res.status(status).render('error',{err})
  })
 
- const ports = process.env.PORT || 8081;
+ const ports = process.env.PORT || 3000;
 
  
 app.listen(ports,function(){

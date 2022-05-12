@@ -55,7 +55,7 @@ var MongoDBStore = require('connect-mongo'); // const options = {
 //   };
 
 
-var dbUrl = process.env.databaseURL || 'mongodb://0.0.0.0:27017/yelp-camp';
+var dbUrl = process.env.databaseURL || 'mongodb://0.0.0.1:27017/yelp-camp';
 ;
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
@@ -153,7 +153,7 @@ app.use(function (err, req, res, next) {
     err: err
   });
 });
-var ports = process.env.PORT || 8081;
+var ports = process.env.PORT || 3000;
 app.listen(ports, function () {
   console.log("Listening on Port ".concat(ports));
 });
